@@ -19,6 +19,7 @@ public class Concurso {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "idconcurso")
 	private long idConcurso;
 	
 	@Column(name = "nombre")
