@@ -20,7 +20,7 @@ public class ConcursoController {
 
 	@RequestMapping("/verConcurso")
 	public String verPagina(Model m) {
-		List<Concurso> list = servicio.listaConcurso("");
+		List<Concurso> list = servicio.listaConcurso();
 		m.addAttribute("concursos", list);
 		return "crudConcurso";
 	}
@@ -28,23 +28,23 @@ public class ConcursoController {
 	
 	@RequestMapping("/listaConcurso")
 	public String lista(@RequestParam Map<String,String> params, Model m) {
-		List<Concurso> list = servicio.listaConcurso(params.get("filtro"));
+		List<Concurso> list = servicio.listaConcursoPorNombre(params.get("filtro")+"%");
 		m.addAttribute("concursos", list);
 		return "crudConcurso";
 	}
 	
 	@RequestMapping("/registraConcurso")
 	public String metodoRegistra(Concurso obj, Model m) {
-		servicio.insertaConcurso(obj);
-		List<Concurso> list = servicio.listaConcurso("");
+		servicio.insertaActualizaConcurso(obj);
+		List<Concurso> list = servicio.listaConcurso();
 		m.addAttribute("concursos", list);
 		return "crudConcurso";
 	}
 	
 	@RequestMapping("/actualizaConcurso")
 	public String metodoActualiza(Concurso obj, Model m) {
-		servicio.actualizaConcurso(obj);
-		List<Concurso> list = servicio.listaConcurso("");
+		servicio.insertaActualizaConcurso(obj);
+		List<Concurso> list = servicio.listaConcurso();
 		m.addAttribute("concursos", list);
 		return "crudConcurso";
 	}
@@ -53,7 +53,7 @@ public class ConcursoController {
 	public String metodoElimina(@RequestParam Map<String,String> params, Model m) {
 		servicio.eliminaConcurso(Integer.parseInt(params.get("id")));
 		
-		List<Concurso> list = servicio.listaConcurso("");
+		List<Concurso> list = servicio.listaConcurso();
 		m.addAttribute("concursos", list);
 		
 		return "crudConcurso";

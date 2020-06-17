@@ -36,7 +36,7 @@ public class AlumnoServicioImpl  implements AlumnoServicio{
 	@Override
 	public List<Alumno> listaAlumnoPorNombre(String filtro) {
 		
-		return repositorio.AlumnoPorNombre(filtro);
+		return repositorio.buscaPorNombre(filtro);
 	}
 
 }

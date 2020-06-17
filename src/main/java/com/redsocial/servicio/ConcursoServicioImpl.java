@@ -15,35 +15,31 @@ public class ConcursoServicioImpl implements ConcursoServicio {
 	private ConcursoRepositorio repositorio;
 
 	@Override
-	public int eliminaConcurso(long id) {
-		 repositorio.deleteById(id);
-		 return 0;
+	public void eliminaConcurso(int id) {
+		// TODO Auto-generated method stub
+		repositorio.deleteById(null);
 	}
 
 	@Override
-	public int insertaConcurso(Concurso obj) {
-		Concurso objNuevo = repositorio.save(obj);
-		if(objNuevo == null) {
-			return -1;
-		}else {
-			return 1;
-		}
+	public Concurso insertaActualizaConcurso(Concurso obj) {
+		// TODO Auto-generated method stub
+		return repositorio.save(obj);
 	}
 
 	@Override
-	public int actualizaConcurso(Concurso obj) {
-		Concurso objNuevo = repositorio.save(obj);
-		if(objNuevo == null) {
-			return -1;
-		}else {
-			return 1;
-		}
+	public List<Concurso> listaConcurso() {
+		// TODO Auto-generated method stub
+			return  repositorio.findAll();
 	}
 
 	@Override
-	public List<Concurso> listaConcurso(String filtro) {
-		return repositorio.findAll();
+	public List<Concurso> listaConcursoPorNombre(String filtro) {
+		return repositorio.buscaPorNombre(filtro);
 	}
+
+
+
+	
 
 }
 

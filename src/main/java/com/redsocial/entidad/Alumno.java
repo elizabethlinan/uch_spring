@@ -25,6 +25,9 @@ public class Alumno {
 	@Column (name="idalumno")
 	private int idAlumno;
 	
+	@Column(name="nombre")
+	private String nombre;
+	
 	
 	@Column(name="dni")
 	private String dni;
@@ -49,7 +52,16 @@ public class Alumno {
 		this.idAlumno = idAlumno;
 	}
 
+	public String getNombre() {
+		return nombre;
+	}
 
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	
 	public String getDni() {
 		return dni;
 	}

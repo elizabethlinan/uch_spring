@@ -41,8 +41,6 @@ public class AlumnoController {
 		return "crudAlumno";
 	}
 	
-	
-	
 	@RequestMapping("/eliminaAlumno")
 	public String metodoElimina(@RequestParam Map<String,String> params, Model m) {
 		servicio.eliminaAlumno(Integer.parseInt(params.get("id")));
