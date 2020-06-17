@@ -15,9 +15,9 @@ public class ConcursoServicioImpl implements ConcursoServicio {
 	private ConcursoRepositorio repositorio;
 
 	@Override
-	public void eliminaConcurso(int id) {
+	public void eliminaConcurso(long id) {
 		// TODO Auto-generated method stub
-		repositorio.deleteById(null);
+		repositorio.deleteById(id);
 	}
 
 	@Override

@@ -13,7 +13,7 @@ public interface ConcursoRepositorio extends JpaRepository<Concurso, Long> {
 
 
 	  @Query("Select x from Concurso x where x.nombre like :var_nombre")
-		public abstract List<Concurso>buscaPorNombre(@Param("var_nombre")String nom);
+		public abstract List<Concurso>buscaPorNombre(@Param("var_nombre")String filtro);
 	
 	
 }
